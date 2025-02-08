@@ -30,8 +30,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', '123')
 DEBUG = True if os.getenv('DEBUG') == 'True' else False
 
 ALLOWED_HOSTS = []
-if not (DEBUG):
-    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
+if not DEBUG:
+    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split()
 
 
 # Application definition
